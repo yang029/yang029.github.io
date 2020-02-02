@@ -28,7 +28,7 @@ twitter_username: jekyllrb
 github_username:  yang029
 
 # Build settings
-theme: jekyll-theme-merlot
+theme: merlot
 plugins:
   - jekyll-feed
 
