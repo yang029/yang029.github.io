@@ -28,6 +28,7 @@ twitter_username: none
 github_username:  yang029
 
 # Build settings
+#theme: minima
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
