@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Notes For Markdown"
+date:   2020-02-05 00:21:00 
+categories: Notes
+---
 # Notes For Markdown
 
 - ## Itatic and Bold
@@ -61,6 +67,7 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
  This is blockquotes
 
 - ## List and sublist
+  
 ```
 * 1.   
 * 2.  
