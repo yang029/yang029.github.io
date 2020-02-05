@@ -60,7 +60,7 @@ categories: Notes
   `This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c0dOa2FYOVFnUlNGRXRoZFNXUjRkV3k0VURzTzkySDBKc3g2ajZ3RjY0MUF3PT0.jpeg)`
 
 
-This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c0dOa2FYOVFnUlNGRXRoZFNXUjRkV3k0VURzTzkySDBKc3g2ajZ3RjY0MUF3PT0.jpeg)
+  This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c0dOa2FYOVFnUlNGRXRoZFNXUjRkV3k0VURzTzkySDBKc3g2ajZ3RjY0MUF3PT0.jpeg)
 
 - ## Blockquotes
   `>This is blockquotes`  
@@ -121,7 +121,7 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
   ##### ---: -> right  
   ##### :---: -> middle
 
-  
+
   | number | name | age | major |
   | --| :----| ---------:| :----: |
   | 1 | Abbay | 20 | AMATH
@@ -130,12 +130,12 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
 - ## Tasks
 
   ```
-    - [x] review CSE
-    - [ ] write essay
+     [x] review CSE
+     [ ] write essay
   ```
 
-  - [x] review CSE
-  - [ ] write essay
+   [x] review CSE  
+   [ ] write essay
 
 - ## Strikethrough
   `this is ~~strickthrough~~`  
