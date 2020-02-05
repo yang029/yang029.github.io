@@ -53,7 +53,7 @@ categories: Notes
 
 
   [Blog]: https://yang029.github.io   
->**The advantage of the reference link style is that multiple links to the same url only need to be updated once. But we should also remember the link should be sepearted with main pages as paragraphs(i.e. double enter)** 
+   >   **The advantage of the reference link style is that multiple links to the same url only need to be updated once. But we should also remember the link should be sepearted with main pages as paragraphs(i.e. double enter)** 
 
 
 - ## Pictures 
@@ -69,28 +69,29 @@ categories: Notes
 - ## List and sublist
   
 ```
-* 1.   
-* 2.  
-  * 2.1 
-  * 2.2 
-* 3.
+* Object orientated language  
+    * java
+    * C++
+* Proceure orientated language 
+    * C
 ```
 
-  * 1.  
-  * 2. 
-    * 
-    * 
-  * 3.
+* Object orientated language  
+    * java
+    * C++
+* Proceure orientated language 
+    * C
+
+
 
 - ## Paragraphs
-  - ### soft break (double spaces)  
-  - ### hard break (double lines) 
+  - #### soft break (double spaces)  
+  - #### hard break (double lines) 
 
 - ## Codeblock
-  - ### single line ' '
+  - #### single line ' '
     `cout << hello world << endl` 
-  - ### hard break (double lines)  
-    ` ``` ``` `
+  - #### multiple lines 
     ```c++
     #include <iostream>
     using namespace std;
@@ -116,7 +117,7 @@ categories: Notes
   | 1 | Abbay | 20 | AMATH
   | 0 | Peter | 19 | CSE
   ```
-  ### The place of the ":" indicates the position of the data in the column.  
+  #### The place of the ":" indicates the position of the data in the column.  
   ##### :--- -> left 
   ##### ---: -> right  
   ##### :---: -> middle
