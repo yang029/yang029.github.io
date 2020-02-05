@@ -61,7 +61,7 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
  This is blockquotes
 
 - ## List and sublist
-```markdown
+```
 * 1.   
 * 2.  
   * 2.1 
@@ -69,11 +69,11 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
 * 3.
 ```
 
-* 1.  
-* 2.  
-  * 2.1 
-  * 2.2
-* 3.
+  * 1.  
+  * 2.  
+    * 2.1 
+    * 2.2
+  * 3.
 
 - ## Paragraphs
   - ### soft break (double spaces)  
