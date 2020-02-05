@@ -131,12 +131,12 @@ categories: Notes
 - ## Tasks
 
   ```
-     [x] review CSE
-     [ ] write essay
+     - [x] review CSE
+     - [ ] write essay
   ```
 
-   [x] review CSE  
-   [ ] write essay
+   - [x] review CSE  
+   - [ ] write essay
 
 - ## Strikethrough
   `this is ~~strickthrough~~`  
