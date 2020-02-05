@@ -101,11 +101,13 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
     ```
 - ## Dividing line
   3 or more consective "*" or "-", like:
+
   ```
     ***
     -----
     - - -
   ```
+
   ***
 - ## Tables 
   ```
@@ -115,19 +117,23 @@ This is my favorite picture ![pic](http://imglf3.nosdn.127.net/img/dWwvOUNMdkJ5c
   | 0 | Peter | 19 | CSE
   ```
   ### The place of the ":" indicates the position of the data in the column.  
-  ### :--- -> left 
-  ### ---: -> right  
-  ### :---: -> middle
+  ##### :--- -> left 
+  ##### ---: -> right  
+  ##### :---: -> middle
+
+  
   | number | name | age | major |
   | --| :----| ---------:| :----: |
   | 1 | Abbay | 20 | AMATH
   | 0 | Peter | 19 | CSE
 
 - ## Tasks
+
   ```
     - [x] review CSE
     - [ ] write essay
   ```
+
   - [x] review CSE
   - [ ] write essay
 
