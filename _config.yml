@@ -18,8 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Lingxiao Yang
+title: YLX's blog
 author: 
+  name: yang029
   email: yang029@uw.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This is Lingxiao's little secret blog. I will put some class notes and thoughts on this site...
