@@ -24,7 +24,7 @@ author:
   email: yang029@uw.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This is Lingxiao's little secret blog. I will put some class notes and thoughts on this site.
-show_excerpts: true
+show_excerpts: false
 minima:
   skin: solarized
   social links: 
