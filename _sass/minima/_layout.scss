@@ -204,6 +204,7 @@
     &:last-child {
       padding-right: 0;
       padding-left: $spacing-unit / 2;
+      text-align: end;
     }
   }
 }
