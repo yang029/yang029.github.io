@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $brand-color-dark;
+  // border-top: 5px solid $brand-color-dark;
   border-bottom: 1px solid $brand-color-light;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
@@ -12,11 +12,12 @@
 }
 
 .site-title {
-  @include relative-font-size(1.625);
-  font-weight: 300;
+  @include relative-font-size(2.3);
+  font-weight: 340;
+  font-family: "Times New Roman";
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
+  // float: left;
 
   @include media-query($on-palm) {
     padding-right: 45px;
@@ -113,6 +114,16 @@
       }
       margin-left: auto;
     }
+    .mylink {
+      display: block;
+      margin-right: 0px;
+      float: none;
+      font-size: 1.6rem;
+      font-weight: lighter;
+      &:not(:last-child) {
+        margin-right: 0px;
+      }
+    }
   }
 }
 
@@ -123,7 +134,11 @@
  */
 .site-footer {
   border-top: 1px solid $brand-color-light;
-  padding: $spacing-unit 0;
+  // padding: $spacing-unit 0;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0rem;
 }
 
 .footer-heading {
@@ -144,7 +159,8 @@
 }
 
 .footer-col {
-  margin-bottom: $spacing-unit / 2;
+  // margin-bottom: $spacing-unit / 2; //default
+  margin-bottom: 0rem;
 }
 
 .footer-col-1,
@@ -177,7 +193,8 @@
 
   .footer-col {
     width: calc(100% - (#{$spacing-unit} / 2));
-    padding: 0 ($spacing-unit / 2);
+    // padding: 0 ($spacing-unit / 2); // default
+    padding: 0 0;
 
     &:first-child {
       padding-right: $spacing-unit / 2;

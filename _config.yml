@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is Lingxiao's little secret blog. I will put some class notes and thoughts on this site.
 show_excerpts: false
 minima:
-  skin: solarized
+  skin: classic
   social links: 
     github: yang029
 
@@ -36,6 +36,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+header_pages:
+  - about.markdown
+  - posts.markdown
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
