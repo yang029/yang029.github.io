@@ -1,8 +1,15 @@
+---
+layout: post
+title:  "Update log"
+date:   2020-02-13 00:33:00 
+categories: log
+---
+
 * At the beginning, I just want to share my complicated feelings on my blog. The initial theme is ~~very~~ kind of ugly, so I design my own genre based on that theme. The inspiration mainly comes from several my favorite blogs. ~~like liuli.in~~ 
 * GitHub pages mainly adopt jekyll as its theme, which is based on Ruby language and is a site generator for liquid, Markdown and YAML. Liquid is a template language which can largely reduce the effort to write new websites. YAML is a configuration file storing the configuration(theme, author, contack...) for the website. It really takes me some time to figure out the structure and relations bewteen these languages.(I never heard even one of them before!)
 * The refactor of the old theme maybe the hardest part for my new blog. The relations are really complicated among all the HTML templates. Different attribute share the same class name so when I try to change one small feature I always screw up all the pages.
 Just like this gif.
-![bug-fix](../assets/pic/bug-fix.gif)
+![bug-fix](../../../../assets/pic/bug-fix.gif)
 *  Anyway, compared to my awesome blog pages, all the effort and hardships are trivial.   
 
 
