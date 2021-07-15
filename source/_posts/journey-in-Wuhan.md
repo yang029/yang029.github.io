@@ -94,7 +94,30 @@ catagories: Journey
 
 ### Day 2 微雨 携佳人同游 晴川阁 汉口江滩 东湖
 
-第二天的经历，现在回忆起来还是如同梦里。清晨便下起了微微细雨，乘着滴滴在你宿舍下，从你手中接过那份热气腾腾的武汉热干面（也是旅程中的唯一一碗hh）
+第二天的经历，现在回忆起来还是如同梦里。清晨便下起了微微细雨，乘着滴滴在你宿舍下，从你手中接过那份热气腾腾的武汉热干面（也是旅程中的唯一一碗hh)。旅途的起点选在了武汉长江大桥，烟雨朦胧中，长江，大桥和对岸的电视塔都带上了黑白的色调，仿佛几十年前的褪色老照片，历史的沧桑感扑面而来。
+
+<div style="display: flex; justify-content: space-bewteen; min-height: 50vh; align-items: flex-start"  >
+    <div style="margin: 1vh; height: 20vh">
+        {% asset_img 6.jpg %}
+    </div>  
+    <div style="margin: 1vh; height: 20vh">
+        {% asset_img 7.jpg %}
+    </div>
+    <div style="margin: 1vh; height: 20vh; font-size: 1vh"> 
+        {% asset_img 8.jpg %}
+    </div>
+</div>
+
+稍作徜徉，便乘坐渡轮横跨长江。虽然天公不作美，有种岳阳楼记中“阴风怒号，浊浪排空”的感觉，但也是因此享受了一程独属于我们两个人的渡轮:)
+
+<div style="display: flex; justify-content: space-bewteen; min-height: 50vh; align-items: flex-start"  >
+    <div style="margin: 1vh; height: 20vh">
+        {% asset_img 28.jpg %}
+    </div>
+    <div style="margin: 1vh; height: 20vh; font-size: 1vh"> 
+        {% asset_img 29.jpg %}
+    </div>
+</div>
 
 ### Day 3 大雨 华科再相逢
 
