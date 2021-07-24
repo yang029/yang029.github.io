@@ -4,6 +4,8 @@ title:  "Notes For Markdown"
 date:   2020-02-05 00:21:00 
 categories: Notes
 ---
+
+<!--more -->
 # Notes For Markdown
 
 - ## Itatic and Bold

@@ -7,6 +7,8 @@ catagories: leetcode
 
 Given an integer array `nums`, return the length of the longest strictly increasing subsequence.
 
+<!--more -->
+
 A **subsequence** is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, `[3,6,2,7]` is a subsequence of the array `[0,3,1,6,2,2,7]`.
 
  
@@ -106,26 +108,49 @@ class Solution {
 }
 ```
 
+However, the best solution does not depend on the range of the input. This is in fact can be solved by greedy. We need to maintain an increasing subsequence. When we meet an new element, we consider to use it to subsitute one of the element in our current subsequence to make it longer. 
+
 The normal `O(n^2)` solution is like this
+```Java
+    class Solution {
+        public int lengthOfLIS(int[] nums) {
+            int []dp=new int[nums.length];
+            Arrays.fill(dp,1);
+            for(int i=1;i<nums.length;i++){
+                for(int j=0;j<i;j++){
+                    if(nums[j]<nums[i]){
+                        dp[i]=Math.max(dp[i],dp[j]+1);
+                    }
+                }
+            }
+            int max=0;
+            for(int i=0;i<dp.length;i++){
+                max=Math.max(max,dp[i]);
+            }
+            return max;
+        }
+    }
+```
+
+`O(nlog(n))` code 
 ```Java
 class Solution {
     public int lengthOfLIS(int[] nums) {
-        int []dp=new int[nums.length];
-        Arrays.fill(dp,1);
-        for(int i=1;i<nums.length;i++){
-            for(int j=0;j<i;j++){
-                if(nums[j]<nums[i]){
-                    dp[i]=Math.max(dp[i],dp[j]+1);
-                }
+        int[] dp = new int[nums.length];
+        int size = 0;
+        for(int i = 0; i < nums.length; i++) {
+            int index = Arrays.binarySearch(dp,0, size, nums[i]); 
+            if(index < 0) {
+                index = -index - 1;
+            } 
+            if(index == size) {
+                size++;
             }
+            dp[index] = nums[i];
+            
         }
-        int max=0;
-        for(int i=0;i<dp.length;i++){
-            max=Math.max(max,dp[i]);
-        }
-        return max;
+        return size;
     }
 }
+
 ```
-
-

@@ -4,7 +4,7 @@ title:  "small research on profit model for mobile games"
 date:   2020-03-3 21:33:00 
 categories: emotion
 ---
-
+<!--more -->
  > __写在前面__   
  > 前几天英语课布置了一个自己选题做research的essay，由于我最近刚上手了一部疯狂骗氪的手游，之前也是在steam上买过不少游戏，于是便出于好奇，决定研究一下手机游戏究竟是怎么盈利的。也在这里大概分享一下我个人的小小见解。
 

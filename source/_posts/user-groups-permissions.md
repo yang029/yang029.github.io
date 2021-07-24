@@ -5,7 +5,7 @@ tags: chomd
 catagories: Linux
 ---
 
-
+<!--more -->
 * user
   * `whoamI` show current login name
   * `users` show current users

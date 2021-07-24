@@ -3,7 +3,7 @@ title: Linux centOS 开启防火墙方法
 date: 2020-10-28 17:11:31
 tags: Tech
 ---
-
+<!--more -->
 前两天我部署在vultr上面的服务器突然挂掉了，能用ssh连接但是ping不通，手机和电脑上ssr也全都连接不上，显示为 `www.***.com 没有返回任何数据`， 第一时间猜测是ip被墙了，所以当天就删去server重新建立了一个，但奇怪的就是新建的还是一样的问题，即使在vultr上面修改inbound rules打开了给 https 的 443 端口和 http 的 80 端口还是无济于事。
 
 {% asset_img inbound_rules.png inbound_rules%}

@@ -5,7 +5,7 @@ tags: bash
 catagories: Linux
 ---
 
-
+<!--more -->
 ## Bash Scripts
 
 * .sh file
