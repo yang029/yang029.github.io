@@ -5,4 +5,7 @@ tags: dynamic programming
 catagories: leetcode
 ---
 
+</br>
+<!--more -->
+
 ## Solution

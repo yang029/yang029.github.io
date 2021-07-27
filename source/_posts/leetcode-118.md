@@ -4,6 +4,7 @@ date: 2021-07-06 16:48:34
 tags: dynamic programmming
 catagories: leetcode 
 ---
+<br>
 <!--more -->
 
 Given an integer `numRows`, return the first numRows of **Pascal's triangle**.

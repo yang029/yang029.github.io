@@ -25,6 +25,7 @@ catagories:
 
   * binary classification: Input x -> Output y (0 or 1)
   * Notation: 
+  
     $$ 
     (x, y), x \isin \R^{n_x}, y\isin \{0, 1 \}
     $$ 
@@ -32,3 +33,5 @@ catagories:
     $
         \{( x^{(1)}, y^{(1)}), （x^{(2)}, y^{(2)}) ...,(x^{(m)}, y^{(m)})   \}
     $
+
+  

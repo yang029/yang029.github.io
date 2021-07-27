@@ -4,9 +4,9 @@ tags: tech
 date: 2021-07-05 17:35:29
 catagories:
 ---
-
-<!--more -->
 ## Useful Linux Linux_commands
+<!--more -->
+
 
 
 ### Command + Flags + Arguments(Parameters)
