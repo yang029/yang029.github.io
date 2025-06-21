@@ -2,6 +2,7 @@
 menu:
   Home: /
   Archives: /archives
+  Secrets: /tags/secret
 rss: /atom.xml
 banner: "images/banner.jpg"
 
@@ -54,9 +55,9 @@ fb_app_id:
 
 # valine comment system. https://valine.js.org
 valine:
-  enable: false # if you want use valine,please set this value is true
-  appId:  # leancloud application app id
-  appKey:  # leancloud application app key
+  enable: true # if you want use valine,please set this value is true
+  appId: yg7zDZ2IYK9SzJ1JVZ2P1GBk-MdYXbMMI # leancloud application app id
+  appKey: buz9Wnd3kqhAZ1ZsAjKu1EH8  # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
   verify: false # valine verify code (true/false)
   pageSize: 10 # comment list page size

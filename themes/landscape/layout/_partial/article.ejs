@@ -1,55 +1,55 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article article-type-<%= post.layout %>" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- Sets the article ID and class dynamically based on the post layout and slug -->
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+    <!-- Includes the post date partial -->
     <%- partial('post/category') %>
+    <!-- Includes the post category partial -->
   </div>
   <div class="article-inner">
     <%- partial('post/gallery') %>
+    <!-- Includes the post gallery partial -->
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'p-name article-title'}) %>
+        <!-- Includes the post title partial -->
       </header>
     <% } %>
     <div class="e-content article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
+        <!-- Displays the post excerpt if available -->
         <% if (theme.excerpt_link){ %>
           <p class="article-more-link">
             <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            <!-- Displays a "Read More" link -->
           </p>
         <% } %>
       <% } else { %>
         <%- post.content %>
+        <!-- Displays the full post content -->
       <% } %>
     </div>
     <footer class="article-footer">
       <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" data-title="<%= post.title %>" class="article-share-link"><%= __('share') %></a>
+      <!-- Displays a share link -->
       <% if (post.comments && config.disqus_shortname){ %>
         <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
+        <!-- Displays a comment link if Disqus is enabled -->
       <% } %>
       <% if (post.comments && theme.valine.enable && theme.valine.appId && theme.valine.appKey ){ %>
         <a href="<%- url_for(post.path) %>#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="<%- url_for(post.path) %>" itemprop="commentCount"></span>
           <%= __('comment') %>
         </a>
+        <!-- Displays a comment link if Valine is enabled -->
       <% } %>
       <%- partial('post/tag') %>
+      <!-- Includes the post tag partial -->
     </footer>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
+    <!-- Includes the post navigation partial -->
   <% } %>
 </article>
-
-<% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-<% } %>
-<% if (!index && post.comments && theme.valine.enable && theme.valine.appId && theme.valine.appKey){ %>
-  <section id="comments" class="vcomment">
-
-  </section>
-<% } %>

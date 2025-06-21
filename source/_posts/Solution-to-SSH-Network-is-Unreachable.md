@@ -30,3 +30,12 @@ and the repository exists.
 之后我又尝试了ping cs.washington.edu，发现居然可以ping 通！！但是当我打开Telnet去ping 上述问题描述的专用于SSH的22端口时，却又连接失败了。最后问题还是落在了端口上
 
 后来经过不懈尝试，又发现如果先把电脑断网，再连上新的网络的短暂时间内push和clone，就可以成功。初步推测是GFW会检测和封锁22端口的流量，导致连接失败。但目前还没有任何证实，解决办法也极其简陋。后续会尝试通过端口转发让22端口也走SSR这样就能够彻底解决问题了..期待后续更新~
+
+> 2022.4.1
+
+我终于又开始更新（填坑）了，这个问题最后通过设置git的proxy解决了。可以在`C:\users\%user%\.gitconfig`找到git的配置文件，然后在其中加上 
+```
+[http]
+    proxy = http://mydomain\\myusername:mypassword@myproxyserver:8080
+```
+选对对应的端口和服务器地址即可

@@ -1,10 +1,13 @@
 <% if (pagination == 2){ %>
-  <% page.posts.each(function(post){ %>
+  <% page.posts.filter(post => !post.secret).each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
 <% } else { %>
   <% var last; %>
-  <% page.posts.each(function(post, i){ %>
+  <!-- In the archive case the showSecrets might be uninitialized -->
+  <% var showSecrets = typeof showSecrets !== 'undefined' ? showSecrets : false; %>
+  <!-- only show secret posts under the secret tags -->
+  <% page.posts.filter(post => (!post.secret || showSecrets)).each(function(post, i){ %>
     <% var year = post.date.year(); %>
     <% if (last != year){ %>
       <% if (last != null){ %>
@@ -17,7 +20,7 @@
         </div>
         <div class="archives">
     <% } %>
-    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+    <%- partial('archive-post', {post: post}) %>
   <% }) %>
   <% if (page.posts.length){ %>
     </div></section>

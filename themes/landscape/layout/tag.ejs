@@ -1,1 +1,30 @@
-<%- partial('_partial/archive', {pagination: config.tag, index: true}) %>
+<!-- showSecrets supports us to only show secret posts under the secret tags -->
+
+<% if (page.tag === 'secret') { %>
+    <div id="auth-box">
+        <p>Enter password to view posts:</p>
+        <input type="password" id="auth-input" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="auth-msg" style="color: red;"></p>
+    </div>
+    
+    <div id="content-box" style="display: none;">
+        <%- partial('_partial/archive', {pagination: config.tag, index: true, showSecrets: true}) %>
+    </div>
+    
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('auth-input').value;
+            const msg = document.getElementById('auth-msg');
+            if (input === 'ylx-42') {
+                document.getElementById('auth-box').style.display = 'none';
+                document.getElementById('content-box').style.display = 'block';
+            } else {
+                msg.innerText = 'Wrong password!';
+            }
+        }
+    </script>
+
+<% } else { %>
+    <%- partial('_partial/archive', {pagination: config.tag, index: true, showSecrets: false}) %>
+<% } %>

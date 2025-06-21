@@ -2,6 +2,8 @@
 title: 武汉小记
 date: 2020-11-09 20:23:45
 tags:
+  - secret
+secret: true
 catagories: Journey
 ---
 
