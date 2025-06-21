@@ -5,6 +5,7 @@ tags:
   - secret
 secret: true
 catagories: Journey
+comments: true 
 ---
 
 ## 行程第一站 -- 九省通衢 武汉
