@@ -89,5 +89,5 @@ valine:
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   lang: en # i18n: zh-cn/en
-  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  placeholder: 写下你的评论吧 # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
