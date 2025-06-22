@@ -1,8 +1,10 @@
 ---
 title: 300. Longest Increasing Subsequence
 date: 2021-07-15 17:22:52
-tags: dynamic programming
-catagories: leetcode
+tags: 
+  - dynamic programming
+  - leetcode
+catagories: Leetcode
 ---
 
 Given an integer array `nums`, return the length of the longest strictly increasing subsequence.

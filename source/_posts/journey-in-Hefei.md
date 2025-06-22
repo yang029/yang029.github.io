@@ -1,8 +1,9 @@
 ---
 title: journey_in_Hefei
 date: 2020-11-09 20:24:10
-tags:
-catagories: journey
+tags: 
+    - Past-Memories
+Past-Memories: true
 ---
 <!--more -->
 武汉逛完了就坐高铁去了合肥，去合肥主要是因为dyx在中科大实在是想念去看一眼，但网上查了许久发现合肥属实没什么名胜古迹和玩的，所以一开始就规划只是呆一下午，和dyx吃个饭，然后晚上入住杭州的民俗。但结果约人的时候出了些意外，一个是时长没控制好，再一个错买票买到了武昌站，要多做一个小时的滴滴。

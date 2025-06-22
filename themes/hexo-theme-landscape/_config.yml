@@ -5,6 +5,8 @@
 menu:
   Home: /
   Archives: /archives
+  Past-Memories: /tags/Past-Memories
+  Leetcode: /tags/leetcode
   Secrets: /tags/secret
 
 # RSS link

@@ -1,8 +1,10 @@
 ---
 title: 403. Frog Jump
 date: 2021-07-07 17:20:14
-tags: dynamic programming
-catagories: leetcode
+tags: 
+  - dynamic programming
+  - leetcode  
+catagories: Leetcode
 ---
 <br>
 <!--more -->

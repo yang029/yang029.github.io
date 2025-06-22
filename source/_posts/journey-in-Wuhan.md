@@ -1,9 +1,9 @@
 ---
 title: 武汉小记
 date: 2020-11-09 20:23:45
-secret: true
-catagories: Journey
-comments: true 
+tags: 
+    - Past-Memories
+Past-Memories: true
 ---
 
 ## 行程第一站 -- 九省通衢 武汉

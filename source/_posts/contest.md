@@ -2,7 +2,8 @@
 title: Weekly Contest 206
 date: 2020-09-13 13:18:53
 tags:
-   - Leetcode Weekly contest
+  - leetcode
+  - Leetcode Weekly contest
 catagories: 
     - Leetcode
 ---

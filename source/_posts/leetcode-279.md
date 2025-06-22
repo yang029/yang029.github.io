@@ -1,8 +1,10 @@
 ---
 title: leetcode-279
 date: 2021-07-19 16:39:34
-tags: dynamic programming
-catagories: leetcode
+tags: 
+  - dynamic programming
+  - leetcode
+catagories: Leetcode
 ---
 
 ## perfect square numbers

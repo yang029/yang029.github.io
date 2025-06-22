@@ -1,5 +1,16 @@
+<!-- takes a list of tag names and returns true if any of them are present in the post's tags: -->
+<%
+function hasAnyTag(post, tagList) {
+  return post.tags && post.tags.some(function(tag) {
+    return tagList.includes(tag.name);
+  });
+}
+%>
+
+<% var excludeTags = ['secret', 'Past-Memories', 'leetcode']; %>
+
 <% if (expand){ %>
-  <% page.posts.filter(post => !post.secret).each(function(post){ %>
+  <% page.posts.filter(post => !hasAnyTag(post, excludeTags)).each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
 <% } else { %>

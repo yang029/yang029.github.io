@@ -4,7 +4,7 @@ tags:
   - leetcode
   - dynamic programming
 date: 2021-07-05 16:43:24
-catagories: leetcode
+catagories: Leetcode
 ---
 
 </br>
