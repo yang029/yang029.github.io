@@ -2,7 +2,7 @@
 title: Hexo 架构初探
 date: 2025-06-21 20:07:44
 tags:
-catagories: Tech
+categories: Tech
 ---
 
 </br>

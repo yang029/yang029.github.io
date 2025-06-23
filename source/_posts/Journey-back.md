@@ -1,7 +1,7 @@
 ---
 title: 艰辛归国路
 date: 2020-08-11 19:25:50
-categories: Journey
+categories: Trip
 ---
 
 </br> ![终于回国啦！！](../../../../assets/pic/arrival_4.png) </br>

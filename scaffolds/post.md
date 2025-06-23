@@ -2,7 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-catagories: 
+categories: 
 ---
 
 </br>

@@ -2,7 +2,7 @@
 title: 通过ssh-key 远程登录服务器
 date: 2020-12-23 16:22:39
 tags:
-catagories: tech
+categories: Tech
 ---
 
 之前一直都是 `ssh root@ip` 然后输入服务器密码去登录自己的服务器。但服务器密码又臭又长每次都得登录进服务器的管理页面去复制粘贴。于是终于下决心去给服务器整个ssh-key 发现真的是出乎意料的简单。

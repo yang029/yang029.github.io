@@ -2,7 +2,7 @@
 title: 继续的征程
 date: 3020-11-08 17:50:21
 tags:
-catagories: emotion
+categories: emotion
 ---
 
 换掉了之前的[置顶](2020/08/06/helloworld), 最近生活逐渐规律，是时候振奋一些了。放宽心态，看着眼前。路一步步走下去吧。

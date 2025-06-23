@@ -3,8 +3,8 @@ title: 1824. Minimum Sideway Jumps
 date: 2021-07-08 20:38:13
 tags: 
   - dynamic programming
-  - leetcode
-catagories: Leetcode
+  - Leetcode
+categories: Leetcode
 ---
 <br>
 <!--more -->

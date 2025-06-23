@@ -1,10 +1,10 @@
 ---
 title: 72. Edit Distance
 tags:
-  - leetcode
+  - Leetcode
   - dynamic programming
 date: 2021-07-05 16:43:24
-catagories: Leetcode
+categories: Leetcode
 ---
 
 </br>

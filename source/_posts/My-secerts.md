@@ -4,7 +4,7 @@ date: 2025-06-21 20:21:40
 tags: 
   - secret
 secret: true
-catagories:
+categories:
 ---
 
 </br>

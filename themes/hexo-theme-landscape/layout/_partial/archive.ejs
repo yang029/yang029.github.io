@@ -7,7 +7,7 @@ function hasAnyTag(post, tagList) {
 }
 %>
 
-<% var excludeTags = ['secret', 'Past-Memories', 'leetcode']; %>
+<% var excludeTags = ['secret', 'Past-Memories', 'Leetcode']; %>
 
 <% if (expand){ %>
   <% page.posts.filter(post => !hasAnyTag(post, excludeTags)).each(function(post){ %>

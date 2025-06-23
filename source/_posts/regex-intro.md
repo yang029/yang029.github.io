@@ -2,7 +2,7 @@
 title: regex_intro
 date: 2021-07-05 17:09:34
 tags: regex
-catagories: Linux
+categories: Linux
 ---
 </br>
 <!--more -->

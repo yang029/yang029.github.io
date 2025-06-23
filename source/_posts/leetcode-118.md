@@ -2,9 +2,9 @@
 title: 118. Pascal's Triangle
 date: 2021-07-06 16:48:34
 tags: 
-  - dynamic programmming
-  - leetcode
-catagories: Leetcode 
+  - dynamic programming
+  - Leetcode
+categories: Leetcode 
 ---
 <br>
 <!--more -->

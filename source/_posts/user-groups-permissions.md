@@ -2,7 +2,7 @@
 title: user/groups/permissions
 date: 2021-07-05 17:09:11
 tags: chomd
-catagories: Linux
+categories: Linux
 ---
 </br>
 <!--more -->

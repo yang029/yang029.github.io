@@ -2,7 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags: dynamic programming
-catagories: Leetcode
+categories: Leetcode
 ---
 
 </br>

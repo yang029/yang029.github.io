@@ -1,8 +1,8 @@
 ---
 title: Linux_commands
-tags: tech
+tags: Tech
 date: 2021-07-05 17:35:29
-catagories:
+categories:
 ---
 ## Useful Linux Linux_commands
 <!--more -->

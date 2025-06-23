@@ -2,7 +2,7 @@
 title: mlIntro
 date: 2021-07-19 21:08:56
 tags: 
-catagories:
+categories:
 ---
 
 * ReLU (rectified linear unit) function
