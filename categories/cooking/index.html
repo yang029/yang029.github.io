@@ -4,19 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>877. Stone Game | YLX&#39;S BLOG</title>
+  <title>Category: cooking | YLX&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="877. Stone Game">
-<meta property="og:url" content="http://yang029.github.io/877/index.html">
+  <meta name="description" content="ylx 的小站">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YLX&#39;S BLOG">
+<meta property="og:url" content="http://yang029.github.io/categories/cooking/index.html">
 <meta property="og:site_name" content="YLX&#39;S BLOG">
+<meta property="og:description" content="ylx 的小站">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-09T04:37:09.000Z">
-<meta property="article:modified_time" content="2025-06-22T07:35:54.659Z">
 <meta property="article:author" content="yang029">
-<meta property="article:tag" content="DP">
-<meta property="article:tag" content="memorization">
-<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="YLX'S BLOG" type="application/atom+xml">
@@ -88,105 +86,49 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-877" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/877/" class="article-date">
-  <time class="dt-published" datetime="2020-09-09T04:37:09.000Z" itemprop="datePublished">2020-09-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-  </div>
+        <section id="main"><!-- takes a list of tag names and returns true if any of them are present in the post's tags: -->
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+
+
+
+
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      877. Stone Game
+  <!-- In the archive case the showSecrets might be uninitialized -->
+  
+  <!-- only show secret posts under the secret tags -->
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2025" class="archive-year">2025</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/" class="archive-article-date">
+  <time class="dt-published" datetime="2025-06-25T17:15:55.000Z" itemprop="datePublished">Jun 25</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/">2025-06-25-蒸水蛋</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        </br>
-<span id="more"></span>
-Alex and Lee play a game with piles of stones. There are an even number of piles **arranged in a row**, and each pile has a positive integer number of stones `piles[i]`.
-
-<p>The objective of the game is to end with the most stones. The total number of stones is odd, so there are no ties.</p>
-<p>Alex and Lee take turns, with Alex starting first. Each turn, a player takes the entire pile of stones from either the beginning or the end of the row. This continues until there are no more piles left, at which point the person with the most stones wins.</p>
-<p>Assuming Alex and Lee play optimally, return <code>True</code> if and only if Alex wins the game.</p>
-<!--more -->
-
-<p><strong>Example 1:</strong></p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: piles = [5,3,4,5]</span><br><span class="line">Output: true</span><br><span class="line">Explanation:</span><br><span class="line">Alex starts first, and can only take the first 5 or the last 5.</span><br><span class="line">Say he takes the first 5, so that the row becomes [3, 4, 5].</span><br><span class="line">If Lee takes 3, then the board is [4, 5], and Alex takes 5 to win with 10 points.</span><br><span class="line">If Lee takes the last 5, then the board is [3, 4], and Alex takes 4 to win with 9 points.</span><br><span class="line">This demonstrated that taking the first 5 was a winning move for Alex, so we return true.</span><br></pre></td></tr></table></figure>
-
-<p><strong>Constraints:</strong></p>
-<ul>
-<li><code>2 &lt;= piles.length &lt;= 500</code></li>
-<li><code>piles.length</code> is even.</li>
-<li><code>1 &lt;= piles[i] &lt;= 500</code></li>
-<li><code>sum(piles)</code> is odd.</li>
-</ul>
-<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>a,b 两人从一数列中轮流取数，每次只能取数列两端点的数字，给定数列，问a的能否胜利。</p>
-<h2 id="思路和代码"><a href="#思路和代码" class="headerlink" title="思路和代码"></a>思路和代码</h2><p>因为是dp的分类里面找的，所以下意识就是用记忆化搜索了。<code>dp[i][j]</code> 表示序列剩余编号是从i到j时，分数的最大(对a）&#x2F;最小（对b）值。可以这样表示是因为<code>(i - j) % 2 == 1</code>对应的是a，<code>(i - j) % 2 == 0</code>对应的是b，两人不会用到相同的<code>dp[i][j]</code>值，猜出来的转移方程差不多就是<br><code>dp[i][j] = total + max(dp[i + 1][j], dp[i][j - 1])</code> (对a)<br><code>dp[i][j] = total - max(dp[i + 1][j], dp[i][j - 1])</code>（对b）</p>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> dp[][];</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">stoneGame</span><span class="params">(<span class="type">int</span>[] piles)</span> &#123;</span><br><span class="line">        dp = <span class="keyword">new</span> <span class="title class_">int</span> [piles.length][piles.length];</span><br><span class="line">        <span class="keyword">return</span> dfs(piles, <span class="number">0</span>, piles.length - <span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span>[] piles, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> total)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(start == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> total;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((start - end) % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[start + <span class="number">1</span>][end] == <span class="number">0</span>) dp[start + <span class="number">1</span>][end] = dfs(piles, start + <span class="number">1</span>, end, total + piles[start]);</span><br><span class="line">            <span class="keyword">if</span>(dp[start][end - <span class="number">1</span>] == <span class="number">0</span>) dp[start][end - <span class="number">1</span>] = dfs(piles, start, end - <span class="number">1</span>, total + piles[end]);</span><br><span class="line">            <span class="keyword">return</span> total + Math.max(dp[start + <span class="number">1</span>][end], dp[start][end - <span class="number">1</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[start + <span class="number">1</span>][end] == <span class="number">0</span>) dp[start + <span class="number">1</span>][end] = dfs(piles, start + <span class="number">1</span>, end, total -piles[start]);</span><br><span class="line">            <span class="keyword">if</span>(dp[start][end - <span class="number">1</span>] == <span class="number">0</span>) dp[start][end - <span class="number">1</span>] = dfs(piles, start, end - <span class="number">1</span>, total - piles[end]);</span><br><span class="line">            <span class="keyword">return</span> total - Math.max(dp[start + <span class="number">1</span>][end], dp[start][end - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>当然这题还有偷懒的数学方法，如果a刚开始选择的是奇数堆，因为剩下的只有偶数堆，所以b只能拿掉偶数的堆，那么这样下去a可以拿到所有的奇数堆，如果a刚开始选择偶数堆同理，总结下来就是a可以选择拿到石子中的一半或者另一半，而这两半总有一个会更大些，所以a，即先拿者，有必胜策略，程序只要<code>return true</code> 就AC了。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yang029.github.io/877/" data-id="cmcbhfpcu000buwo93yxa6tmz" data-title="877. Stone Game" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-        <a href="/877/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count fa fa-comment" data-xid="/877/" itemprop="commentCount"></span>
-          Comments
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memorization/" rel="tag">memorization</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/1140/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1140. Stone Game II
-        
-      </div>
-    </a>
-  
-  
-    <a href="/1022/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1022. Sum of Root to Leaf Binary Numbers</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
-
-  <section id="comments" class="vcomment">
-
-  </section>
 </section>
         
           <aside id="sidebar">

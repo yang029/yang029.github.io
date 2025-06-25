@@ -4,20 +4,25 @@
   <meta charset="utf-8">
   
   
-  <title>877. Stone Game | YLX&#39;S BLOG</title>
+  <title>2025-06-25-蒸水蛋 | YLX&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="article">
-<meta property="og:title" content="877. Stone Game">
-<meta property="og:url" content="http://yang029.github.io/877/index.html">
+<meta property="og:title" content="2025-06-25-蒸水蛋">
+<meta property="og:url" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/index.html">
 <meta property="og:site_name" content="YLX&#39;S BLOG">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-09T04:37:09.000Z">
-<meta property="article:modified_time" content="2025-06-22T07:35:54.659Z">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/5.jpg">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/1.jpg">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/2.jpg">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/3.jpg">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/4.jpg">
+<meta property="og:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/6.jpg">
+<meta property="article:published_time" content="2025-06-25T17:15:55.000Z">
+<meta property="article:modified_time" content="2025-06-25T17:37:22.948Z">
 <meta property="article:author" content="yang029">
-<meta property="article:tag" content="DP">
-<meta property="article:tag" content="memorization">
-<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/5.jpg">
   
     <link rel="alternate" href="/atom.xml" title="YLX'S BLOG" type="application/atom+xml">
   
@@ -88,14 +93,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-877" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2025-06-25-蒸水蛋" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/877/" class="article-date">
-  <time class="dt-published" datetime="2020-09-09T04:37:09.000Z" itemprop="datePublished">2020-09-08</time>
+    <a href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/" class="article-date">
+  <time class="dt-published" datetime="2025-06-25T17:15:55.000Z" itemprop="datePublished">2025-06-25</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/cooking/">cooking</a>
   </div>
 
   </div>
@@ -106,7 +111,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      877. Stone Game
+      2025-06-25-蒸水蛋
     </h1>
   
 
@@ -115,66 +120,76 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         </br>
+
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/5.jpg" class="" title="image">
 <span id="more"></span>
-Alex and Lee play a game with piles of stones. There are an even number of piles **arranged in a row**, and each pile has a positive integer number of stones `piles[i]`.
 
-<p>The objective of the game is to end with the most stones. The total number of stones is odd, so there are no ties.</p>
-<p>Alex and Lee take turns, with Alex starting first. Each turn, a player takes the entire pile of stones from either the beginning or the end of the row. This continues until there are no more piles left, at which point the person with the most stones wins.</p>
-<p>Assuming Alex and Lee play optimally, return <code>True</code> if and only if Alex wins the game.</p>
-<!--more -->
+<p>今天试着早饭做了一个蒸鸡蛋，感觉难度还可以，比较好做，记录一下做法方便以后重复做</p>
+<ol>
+<li>鸡蛋打入碗中，加入适量的盐和水，搅拌均匀。随后用勺子撇去浮沫</li>
+</ol>
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/1.jpg" class="" title="image">
 
-<p><strong>Example 1:</strong></p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: piles = [5,3,4,5]</span><br><span class="line">Output: true</span><br><span class="line">Explanation:</span><br><span class="line">Alex starts first, and can only take the first 5 or the last 5.</span><br><span class="line">Say he takes the first 5, so that the row becomes [3, 4, 5].</span><br><span class="line">If Lee takes 3, then the board is [4, 5], and Alex takes 5 to win with 10 points.</span><br><span class="line">If Lee takes the last 5, then the board is [3, 4], and Alex takes 4 to win with 9 points.</span><br><span class="line">This demonstrated that taking the first 5 was a winning move for Alex, so we return true.</span><br></pre></td></tr></table></figure>
-
-<p><strong>Constraints:</strong></p>
 <ul>
-<li><code>2 &lt;= piles.length &lt;= 500</code></li>
-<li><code>piles.length</code> is even.</li>
-<li><code>1 &lt;= piles[i] &lt;= 500</code></li>
-<li><code>sum(piles)</code> is odd.</li>
+<li>要点1: 我使用的是温水，大概就是烧水壶开启一会儿后手摸着稍烫的水</li>
+<li>要点2：盐的量稍微加一点就可以，我这次三个鸡蛋放了一小层勺子的盐，大概是盐罐大口掂两下</li>
+<li>要点3：这一次鸡蛋和水的比例是1:1.5,计算比例的诀窍就是留半个打鸡蛋的蛋壳，用它来当容器计算比例。非常方便。</li>
 </ul>
-<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>a,b 两人从一数列中轮流取数，每次只能取数列两端点的数字，给定数列，问a的能否胜利。</p>
-<h2 id="思路和代码"><a href="#思路和代码" class="headerlink" title="思路和代码"></a>思路和代码</h2><p>因为是dp的分类里面找的，所以下意识就是用记忆化搜索了。<code>dp[i][j]</code> 表示序列剩余编号是从i到j时，分数的最大(对a）&#x2F;最小（对b）值。可以这样表示是因为<code>(i - j) % 2 == 1</code>对应的是a，<code>(i - j) % 2 == 0</code>对应的是b，两人不会用到相同的<code>dp[i][j]</code>值，猜出来的转移方程差不多就是<br><code>dp[i][j] = total + max(dp[i + 1][j], dp[i][j - 1])</code> (对a)<br><code>dp[i][j] = total - max(dp[i + 1][j], dp[i][j - 1])</code>（对b）</p>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> dp[][];</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">stoneGame</span><span class="params">(<span class="type">int</span>[] piles)</span> &#123;</span><br><span class="line">        dp = <span class="keyword">new</span> <span class="title class_">int</span> [piles.length][piles.length];</span><br><span class="line">        <span class="keyword">return</span> dfs(piles, <span class="number">0</span>, piles.length - <span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span>[] piles, <span class="type">int</span> start, <span class="type">int</span> end, <span class="type">int</span> total)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(start == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> total;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((start - end) % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[start + <span class="number">1</span>][end] == <span class="number">0</span>) dp[start + <span class="number">1</span>][end] = dfs(piles, start + <span class="number">1</span>, end, total + piles[start]);</span><br><span class="line">            <span class="keyword">if</span>(dp[start][end - <span class="number">1</span>] == <span class="number">0</span>) dp[start][end - <span class="number">1</span>] = dfs(piles, start, end - <span class="number">1</span>, total + piles[end]);</span><br><span class="line">            <span class="keyword">return</span> total + Math.max(dp[start + <span class="number">1</span>][end], dp[start][end - <span class="number">1</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[start + <span class="number">1</span>][end] == <span class="number">0</span>) dp[start + <span class="number">1</span>][end] = dfs(piles, start + <span class="number">1</span>, end, total -piles[start]);</span><br><span class="line">            <span class="keyword">if</span>(dp[start][end - <span class="number">1</span>] == <span class="number">0</span>) dp[start][end - <span class="number">1</span>] = dfs(piles, start, end - <span class="number">1</span>, total - piles[end]);</span><br><span class="line">            <span class="keyword">return</span> total - Math.max(dp[start + <span class="number">1</span>][end], dp[start][end - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/2.jpg" class="" title="image">
 
-<blockquote>
-<p>当然这题还有偷懒的数学方法，如果a刚开始选择的是奇数堆，因为剩下的只有偶数堆，所以b只能拿掉偶数的堆，那么这样下去a可以拿到所有的奇数堆，如果a刚开始选择偶数堆同理，总结下来就是a可以选择拿到石子中的一半或者另一半，而这两半总有一个会更大些，所以a，即先拿者，有必胜策略，程序只要<code>return true</code> 就AC了。</p>
-</blockquote>
+
+<ol start="2">
+<li>锅中烧水，水烧开后转小火，放入鸡蛋，开始计时<ul>
+<li>要点1: 水开后转小火是为了防止鸡蛋表面起泡，导致蒸出来的鸡蛋表面不平整</li>
+<li>要点2: 我盖了一个盘子在鸡蛋上面，防止水蒸气滴落到鸡蛋上面导致表面不平整</li>
+</ul>
+</li>
+</ol>
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/3.jpg" class="" title="image">
+
+<ol start="3">
+<li>我这次蒸了十分钟看基本上表面已经完全凝固了就可以出锅了。表面到上少许蒸鱼豉油和葱花，味道非常的不错。</li>
+</ol>
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/4.jpg" class="" title="image">（表面不平是因为出锅的时候碗斜了一下）
+
+<p>这次蒸鸡蛋整体的口感偏有弹性一些，更加的像布丁。下一次可以尝试把水的比例变成1:2,口感应该会更加嫩滑。</p>
+</br>
+
+<img src="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/6.jpg" class="" title="image">
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yang029.github.io/877/" data-id="cmcbhfpcu000buwo93yxa6tmz" data-title="877. Stone Game" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://yang029.github.io/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/" data-id="cmcc8k8ee0000r0o9fggpepq7" data-title="2025-06-25-蒸水蛋" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-        <a href="/877/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count fa fa-comment" data-xid="/877/" itemprop="commentCount"></span>
+        <a href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count fa fa-comment" data-xid="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/" itemprop="commentCount"></span>
           Comments
         </a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/" rel="tag">DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/memorization/" rel="tag">memorization</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/1140/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/thoughts-on-11-8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          1140. Stone Game II
+          继续的征程
         
       </div>
     </a>
   
   
-    <a href="/1022/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025-06-24-%E9%AA%91%E8%A1%8C%E5%B0%8F%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1022. Sum of Root to Leaf Binary Numbers</div>
+      <div class="article-nav-title">2025-06-24-骑行小记</div>
     </a>
   
 </nav>
