@@ -1,25 +1,16 @@
 ---
-title: 合肥+杭州小记 (2020-11-09)
-date: 2025-06-24 20:24:10
+title: 上海小记
+date: 2025-06-24 20:23:45
+tags: 
 categories:
   - Trip
 ---
 
 </br>
 
-
-2025-06-24 UPDATE
-
-还是看图吧我忘了大二的时候要写啥了 :(
+都是大二的事情了。就不再为赋新词强说愁了，就看看图吧。
 
 <!--more -->
-
-武汉逛完了就坐高铁去了合肥，去合肥主要是因为dyx在中科大实在是想念去看一眼，但网上查了许久发现合肥属实没什么名胜古迹和玩的，所以一开始就规划只是呆一下午，和dyx吃个饭，然后晚上入住杭州的民俗。但结果约人的时候出了些意外，一个是时长没控制好，再一个错买票买到了武昌站，要多做一个小时的滴滴。
-
-导致我只能买稍迟的票，到到了合肥大概已经七点多了，当天最迟的去杭州的高铁是在十点多，所以属实没有在合肥逗留许久。
-
-
-</br>
 
 {% asset_img 1.jpg %}
 
@@ -67,7 +58,7 @@ categories:
 
 {% asset_img 12.jpg %}
 
-</br>
+<!-- </br>
 
 {% asset_img 13.jpg %}
 
@@ -85,7 +76,7 @@ categories:
 
 </br>
 
-{% asset_img 17.jpg %}
+{% asset_img 17.jpg %} -->
 
 </br>
 
@@ -95,7 +86,7 @@ categories:
 
 {% asset_img 19.jpg %}
 
-</br>
+<!-- </br>
 
 {% asset_img 20.jpg %}
 
@@ -113,7 +104,7 @@ categories:
 
 </br>
 
-{% asset_img 24.jpg %}
+{% asset_img 24.jpg %} -->
 
 </br>
 
@@ -202,19 +193,3 @@ categories:
 </br>
 
 {% asset_img 46.jpg %}
-
-</br>
-
-{% asset_img 47.jpg %}
-
-</br>
-
-{% asset_img 48.jpg %}
-
-</br>
-
-{% asset_img 49.jpg %}
-
-</br>
-
-{% asset_img 50.jpg %}
