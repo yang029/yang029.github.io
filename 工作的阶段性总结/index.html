@@ -11,8 +11,8 @@
 <meta property="og:url" content="http://yang029.github.io/%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="YLX&#39;S BLOG">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-06-24T04:10:08.000Z">
-<meta property="article:modified_time" content="2025-06-25T04:34:44.219Z">
+<meta property="article:published_time" content="2025-06-27T04:10:08.000Z">
+<meta property="article:modified_time" content="2025-06-26T07:40:58.184Z">
 <meta property="article:author" content="yang029">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
         <section id="main"><article id="post-工作的阶段性总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2025-06-24T04:10:08.000Z" itemprop="datePublished">2025-06-23</time>
+  <time class="dt-published" datetime="2025-06-27T04:10:08.000Z" itemprop="datePublished">2025-06-26</time>
 </a>
     
   <div class="article-category">
@@ -117,10 +117,29 @@
 
 <p>回头一看，工作也有快两年时间了。最近也是拿到了第一个promotion。最近settle好了博客也是顺便反思回忆下到底一路走来的经历。</p>
 <h2 id="初入职场"><a href="#初入职场" class="headerlink" title="初入职场"></a>初入职场</h2><p>刚来的我可以说是一无所知，来的第一周是完完全全的在看document从早到晚。直到mentor开始催我写第一个project..后来发现其实还是一边做一边学上手的快，刚开始硬塞进脑子的知识也基本上是不见踪影了笑死:(</p>
-<p>刚刚加入公司的新人会被分配到3个mentor project从简单到难，但我感觉这个跨度属实是有点大了。我第一个project就删除了两行代码，结果第二个就要写一个concurrent的logging system了。虽然是基于之前单线程的代码来写，但基本上所有的api都看不懂，也是试了很久才解决了compile issue。可是没想到啊没想到，刚刚merge进去就搞了个大bug，还是没有想到<code>std::map</code>是不支持concurrent的。</p>
-<p>大概情况是这个，我用一个<code>map&lt;&#123;thread Id&#125;, &#123;logs&#125;&gt;</code>来存储每个线程的日志，如果某个线程第一次触发了<code>error_callback()</code>,就<code>map.insert(&#123;thread_id, logs&#125;)</code>。但是如果有两个线程同时触发了<code>error_callback()</code>，就会导致一个线程的<code>logs</code>被另一个线程覆盖掉。然后后面iterate <code>thread ID</code> 的时候就会直接crash掉。并且这个问题非常难复现，也是debug了很久才发现在什么情况下会遇到这个问题。最后修这个问题也是一波三折，团队里面的成员坚决反对用<code>mutex</code>，认为这样会导致性能下降，结果就导致修了一半没修好还是crash。最后还是加上了<code>mutex</code>，才彻底解决了这个问题。</p>
+<p>刚刚加入公司的新人会被分配到3个mentor projects从简单到难，但我感觉这个跨度属实是有点大了。我第一个project就删除了两行代码，结果第二个就要写一个concurrent的logging system了。虽然是基于之前单线程的代码来写，但基本上所有的api都看不懂，也是试了很久才解决了compile issue。可是没想到啊没想到，刚刚merge进去就搞了个大bug，没有想到<code>std::map</code>是不支持concurrency的。</p>
+<p>大概情况是这个，我用一个<code>map&lt;&#123;thread Id&#125;, &#123;logs&#125;&gt;</code>来存储每个线程的日志，如果某个线程第一次触发了<code>error_callback()</code>,就<code>map.insert(&#123;thread_id, logs&#125;)</code>。但是如果有两个线程同时触发了<code>error_callback()</code>，就会导致一个线程的<code>logs</code>被另一个线程覆盖掉。然后后面iterate <code>thread ID</code> 的时候就会直接crash掉。因为基本上所有的test都在用这个logging，所以这个bug hit次数非常之多，可能一天就hit了1-2k次。然而，因为是race condition, 这个问题非常难复现，也是debug了很久才发现在在哪里出现了race。最后修这个问题也是一波三折，团队里面的成员坚决反对用<code>mutex</code>，认为这样会导致性能下降，于是我就想了一个理所当然的fix上去，结果就导致修了一半没修好还是crash。最后还是加上了<code>mutex</code>，才彻底解决了这个问题。</p>
 <p>第二个project已经是下马威了，没想到第三个project更是抽象中的抽象。manager把我和另一个中国人大佬拉了一个会来带我理解这个project。结果就是我被咖喱味英语和chinglish混合双打了半个小时愣是没听懂要干啥。mentor看样子也是一脸懵逼啥都不懂..最后也没办法厚着脸皮跟着大佬一直问总算是搞明白了，但具体实现也是难上加难。不但要从一个新package里面import各种api，还要写tacc code去把这些api变成python能用的接口。最后甚至需要用并查集来实现这个功能的逻辑（这也是我工作两年唯一使用算法的地方了xs）。后来也是硬着头皮把整个的思路在组会的时候讲了一遍，出乎意料的居然没有收到很多意见，于是便埋头开始做。最后一直做到12月才把第三个project merge进去。那时候已经开始工作四个月了，甚至因为review board写得好还被manager提名上了每周大组开会的<code>reviewboard highlight</code>（虽然也是我到现在唯一一次嘻嘻）。那时候以为这种难度的project已经是难度巅峰了，没想到磨难才刚刚开始…</p>
-<h2 id="第一个大project"><a href="#第一个大project" class="headerlink" title="第一个大project"></a>第一个大project</h2><p>To be continued…</p>
+<h2 id="第一个大project"><a href="#第一个大project" class="headerlink" title="第一个大project"></a>第一个大project</h2><h3 id="ramp-up"><a href="#ramp-up" class="headerlink" title="ramp up"></a>ramp up</h3><p>没想到第一个大project就给我整了个大活，先是manager跟我开了两三次会，让我去研究一个github上的“HSDK”，以及给我反复讲解它的结构。但说实话我当时还是一无所知。然后便是被突然收到一个晚上开会的邀请，半夜九点半啊，之前一直以为我们公司wlb很好没有加班的呜呜，一下子幻灭了。进去之后就是一堆印度人，一方面我还没有完全适应咖喱英语的暴击，一方面讲的内容我也完全听不懂。第一次开会真的是崩溃到中间强撑着没有睡着。然后就是被派了一个从来没有接触过，也没有任何documents的活 – 去bring up 一个听都没有听过的芯片。当时真的是人生中低谷的低谷了。工作时间没有任何一个人能去问，并且对于这个活完全不知道该怎么下手。</p>
+<p>就当我磨洋工的看了一两周documents的时候，另外一个大暴击来了，我的mentor突然离职了！！！在一个普普通通的星期三，我的manager突然在聊天群里说到：“Friday will be the last day for Tommy”。 这对我来说真的是一个天大的坏消息，因为我mentor和我是唯一在美国时区做这个项目的人，也是我在这个公司里面除了manager最熟的人，就这么一声不吭的走了确实是有点措手不及。后来周五他专程拉我一起去吃了个饭聊了聊，但全程就是认知偏差啊，他给我的忠告就是 “多去想想你人生中真正想做的事”。哎但我一个为身份挣扎希望能够挣回学费的人，又能奢求什么理想呢。他后来说他要去挑战<code>PCT (pacific crest trail)</code>，是一条从美国西海岸最南边到最北边的徒步路线，全场四千多公里，走完需要六个多月的时间。确实很符合他说的话..虽然我确实心里多有怨言，但无论如何还是祝他一路平安了。</p>
+<p>说回正题，这段时间里面我也在和ex闹分手，也正好在十二月大家都在休假，这个工作也就在慢慢磨洋工的进展，每天看看document，一点代码都没写。中间manager还找了另外一个组的人来一起做，当时是圣诞节，我还专门赶到公司和他见了一面，结果没想到这就是见他的最后一面。他可能也感觉到这是个shitty project,直接跳坑了&#x2F;捂脸</p>
+<h3 id="开始有进展"><a href="#开始有进展" class="headerlink" title="开始有进展"></a>开始有进展</h3><p>经过一个多月的磨洋工，我终于在一月初克服了自己的i人本性，找到了我经理推荐的印度大佬Shubham，跟他约了一个会去正式推进我的项目进展。出乎意料的大佬非常nice，对我的很多幼稚问题基本上都是有问必答。现在回看之前的聊天记录也是对自己的无知感到有些汗颜😂。</p>
+<p>大概了解了做什么之后，进展就相对顺利了，其实大部分都是对旧代码的copy-paste和rename。现在仔细想想其实这些并不难，只不过熟悉整个工作流程和环境确实learning curve比较陡峭。我大概两周就搞定了一部分的工作。但是最尴尬的是我忘记改<code>makefile</code>了，导致我新加的代码根本不编译，还喜滋滋的告诉Shubham说我的代码编译了。直到一周后才突然发现不对🤦‍。然后就开始了漫长的<code>make -&gt; error -&gt; debug -&gt; make -&gt; new error</code> 的无尽循环，每天晚上都抛给Shubham一大堆问题然后等第二天起来看他的回复解决。这整个过程大概断断续续的搞了一个多月，已经开始折磨了。</p>
+<p>同时不知道是不是manager故意训练我，我也同时分配到另外一个平行的工作。可以算是同一个project，就是在我们公司的项目里面去加上这个新芯片的支持。</p>
+<p>为什么说是平行的，因为我们的架构是这样的</p>
+<blockquote>
+<p>公司的主要代码 -&gt; eos-trunk 在perforce 上面host<br>  我做的HSDK -&gt; 在github上面host<br>  公司的build system 会在 build的时候把不同的代码编译出的library打包到一起</p>
+</blockquote>
+<p>所以暂时来看这两个工作互不干扰。但这个工作更是纯纯的折磨，也是不断的complie-&gt;debug-&gt;complie-&gt;debug的循环。因为我们的架构是</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> ChipModel:</span></span><br><span class="line">    ChipModel1,</span><br><span class="line">    ChipModel2,</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<p>然后在不同的feature package里面，会有对这个model的switch</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (chip_model) &#123;</span><br><span class="line">    <span class="keyword">case</span> ChipModel1:</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> ChipModel2:</span><br><span class="line">        <span class="comment">// do something else</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">assert</span>(<span class="literal">false</span> &amp;&amp; <span class="string">&quot;Unknown chip model&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以我需要在每个 <code>switch</code> 下面都加上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> NewChipModel:</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<p>对于每个地方还需要开新的<code>to-do bug</code> 去track。真的是纯纯体力活，重复劳动，但我还是三月初的时候把这两个玩意勉强搞完了，现在看看当时的进度居然觉得还是比较快的哈哈哈。</p>
 <h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2>
       
     </div>
@@ -140,19 +159,19 @@
     
 <nav id="article-nav">
   
-    <a href="/journey-in-Shanghai/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/thoughts-on-11-8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          上海小记
+          继续的征程
         
       </div>
     </a>
   
   
-    <a href="/%E7%BA%BD%E7%BA%A6%E8%A1%8C%E4%BD%93%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">纽约行体验</div>
+      <div class="article-nav-title">2025-06-25-蒸水蛋</div>
     </a>
   
 </nav>
@@ -219,6 +238,10 @@
           </li>
         
           <li>
+            <a href="/%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">工作的阶段性总结</a>
+          </li>
+        
+          <li>
             <a href="/2025-06-25-%E8%92%B8%E6%B0%B4%E8%9B%8B/">2025-06-25-蒸水蛋</a>
           </li>
         
@@ -228,10 +251,6 @@
         
           <li>
             <a href="/journey-in-Hefei/">合肥+杭州小记 (2020-11-09)</a>
-          </li>
-        
-          <li>
-            <a href="/journey-in-Shanghai/">上海小记</a>
           </li>
         
       </ul>
